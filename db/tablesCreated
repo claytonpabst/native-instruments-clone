@@ -1,0 +1,21 @@
+-- CREATE TABLE Users (
+--     ID serial NOT NULL PRIMARY KEY,
+--     UserName varchar(255) not null,
+--     FirstName varchar(255) not null,
+--     LastName varchar(255) NOT NULL
+-- );
+
+-- CREATE TABLE userPasswords (
+--     userPassword varchar(255) not null,
+--     password_ID int, 
+--         Foreign Key (password_ID) REFERENCES Users(ID)
+-- );
+-- select * from users
+-- insert into users (username, firstname, lastname) values ('admin', 'Jane', 'Doe');
+
+-- insert into userpasswords (userpassword, password_id) values('admin', 2)
+
+
+SELECT * FROM users 
+JOIN userpasswords ON userpasswords.password_id = users.id
+where username = 'user'
