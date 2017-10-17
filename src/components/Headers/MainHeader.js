@@ -6,12 +6,21 @@ import './MainHeader.css';
 class MainHeader extends Component {
 
 
+
   render() {
+
+    let headerName = {
+        "transform":"scale(1, .6)",
+        "font-weight":"bolder",
+        "letter-spacing":"-1px",
+        "font-size":"20px"
+    }
+
     return (
       <div className="mainHeaderWrapper">
-        <div style={{"width":"200px"}} className='flexRow'>
+        <div style={{"width":"230px"}} className='flexRow'>
             <img style={{"height":"40px"}} src="https://static1.squarespace.com/static/57684221579fb3ab7144f54d/57ee4f38893fc0c995dad73a/57ee4f39d1758e241444feb2/1475235642440/native+instruments.png" alt=""/>
-            <ul>Native Instruments</ul>
+            <ul style={headerName} >Native Instruments</ul>
         </div>
         <div style={{"width":"500px"}} className='flexRow'>
             <ul className='navTextMedium'>PRODUCTS</ul>
