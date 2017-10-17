@@ -4,4 +4,21 @@
     position: relative;
 }
 
+/*----------------Global------------------*/
+
+.flexRow{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navTextMedium{
+    font-weight: bold;
+    transform: scaleX(.8);
+}
+.navTextMedium:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 

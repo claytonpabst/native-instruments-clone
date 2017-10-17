@@ -1,0 +1,11 @@
+.mainHeaderWrapper{
+    height: 60px;
+    width: 100%;
+    /*background: pink;*/
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+}
+.mainHeaderWrapper ul:hover{
+    border-bottom: 5px solid grey;
+}
