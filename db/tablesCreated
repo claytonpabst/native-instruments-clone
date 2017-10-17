@@ -5,12 +5,24 @@
 --     LastName varchar(255) NOT NULL
 -- );
 
+create table admins (
+--     id serial not null primary key,
+--     username varchar(255) not null,
+--     adminPassword varchar(255) not null,
+--     firstName varchar(255) not null,
+--     lastName varchar(255) not null
+-- )
+
+-- insert into admins (username, adminPassword, firstName, lastName) values ('admin', 'admin', 'Clayton', 'Pabst');
+
 -- CREATE TABLE userPasswords (
 --     userPassword varchar(255) not null,
 --     password_ID int, 
 --         Foreign Key (password_ID) REFERENCES Users(ID)
 -- );
+
 -- select * from users
+
 -- insert into users (username, firstname, lastname) values ('admin', 'Jane', 'Doe');
 
 -- insert into userpasswords (userpassword, password_id) values('admin', 2)
