@@ -40,10 +40,11 @@
     height: 30px;
     font-size: 18px;
     font-weight: lighter;
-    line-height: 40px;
+    line-height: 70px;
     background: white;
     color: black;
     font-weight: bold;
+    padding: 10px 25px;
 }
 .landingVideoText span:hover{
     cursor: pointer;
