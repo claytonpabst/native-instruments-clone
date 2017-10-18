@@ -15,9 +15,13 @@
 .navTextMedium{
     font-weight: bold;
     transform: scaleX(.8);
+    height: 100%;
+    padding-top: 25px;
 }
 .navTextMedium:hover{
-    text-decoration: underline;
+    cursor: pointer;
+}
+.aLink:hover{
     cursor: pointer;
 }
 
