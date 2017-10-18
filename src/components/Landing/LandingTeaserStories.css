@@ -1,0 +1,26 @@
+.landingTeaserStoriesSection{
+    width: 100%;
+}
+
+.landingTeaserStoriesWrapper{
+    width: 90%;
+    min-height: 400px;
+    max-width: 1250px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.ltsSingleStory{
+    width: 47%;
+    text-align: center;
+}
+.ltsSingleStory h1{
+    font-size: 30px;
+    margin: 10px;
+}
+.ltsSingleStory h3{
+    font-size: 20px;
+    margin-bottom: 60px;
+    font-weight: lighter;
+}

@@ -1,7 +1,9 @@
 .landingVideoSection{
     width: 100%;
     height: auto;
-    position: relative;
+    height: 50vw;
+    max-height: 700px;
+    /*position: relative;*/
 }
 
 .landingVideo{

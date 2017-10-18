@@ -4,7 +4,14 @@ import './MainHeader.css';
 
 
 class MainHeader extends Component {
+    constructor(props){
+        super(props)
 
+        this.state = {
+            
+        }
+        //bind shit here
+    }
 
 
   render() {
