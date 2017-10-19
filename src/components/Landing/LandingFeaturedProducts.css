@@ -1,0 +1,43 @@
+.landingSectionHeader{
+    width:100%;
+    margin-bottom: 20px;
+}
+.landingSectionHeader h1{
+    font-size: 35px;
+    margin: 10px 0;
+    float: left;
+    letter-spacing: -2px;
+    font-weight: bold;
+}
+.landingSectionHeader h3{
+    font-size: 15px;
+    margin: 10px 0;
+    background: #222;
+    padding: 10px;
+    float: right;
+    letter-spacing: -.5px;
+    color: white;
+    font-weight: lighter;
+}
+.lfpContentWrapper{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.lfpSingleProduct{
+    width: 30%;
+    position: relative;
+    margin-bottom: 40px;
+}
+.lfpSingleProduct img{
+    width: 100%;
+}
+.lfpSingleProduct h1{
+    position: absolute;
+    z-index: 5;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 20px;
+}

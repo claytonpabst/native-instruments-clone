@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MainHeader from './../Headers/MainHeader.js';
 import LandingVideo from './../LandingVideo/LandingVideo.js';
 import LandingTeaserStories from './../Landing/LandingTeaserStories.js';
+import LandingFeaturedProducts from './../Landing/LandingFeaturedProducts.js';
 
 import './Home.css';
 
@@ -15,6 +16,7 @@ class Home extends Component {
           <MainHeader/>
           <LandingVideo/>
           <LandingTeaserStories/>
+          <LandingFeaturedProducts/>
 
       </div>
     );

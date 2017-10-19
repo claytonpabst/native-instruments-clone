@@ -4,7 +4,6 @@
 
 .landingTeaserStoriesWrapper{
     width: 90%;
-    min-height: 400px;
     max-width: 1250px;
     margin: 50px auto;
     display: flex;
