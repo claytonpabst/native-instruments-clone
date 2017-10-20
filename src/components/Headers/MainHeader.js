@@ -26,10 +26,10 @@ class MainHeader extends Component {
 
     return (
       <div className="mainHeaderWrapper">
-        <div style={{"width":"230px"}} className='flexRow'>
+        <Link to='/' style={{"width":"230px"}} className='flexRow'>
             <img className='aLink' style={{"height":"40px"}} src="https://cdn.rekkerd.org/wp-content/uploads/2017/03/Native-Instruments-logo.png" alt=""/>
             {/*<ul style={headerName} >Native Instruments</ul>*/}
-        </div>
+        </Link>
         <div style={{"width":"500px"}} className='flexRow'>
             <Link to='/products' className='navTextMedium'>PRODUCTS</Link>
             <Link to='/' className='navTextMedium'>BLOG</Link>
