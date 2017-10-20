@@ -1,0 +1,22 @@
+.lmsSingleStory{
+    width: 32%;
+    position: relative;
+    margin-bottom: 40px;
+    border: 1px solid lightgrey;
+}
+.lmsSingleStory img{
+    width: 100%;
+}
+
+.lmsSingleStory h1{
+    font-size: 21px;
+    color: #444;
+    margin: 10px;
+}
+.lmsSingleStory h3{
+    font-size: 14px;
+    line-height: 20px;
+    color: #888;
+    margin: 10px 15px 50px 10px;
+    font-weight: lighter;
+}

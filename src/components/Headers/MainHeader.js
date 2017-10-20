@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import './MainHeader.css';
 
@@ -30,10 +31,10 @@ class MainHeader extends Component {
             {/*<ul style={headerName} >Native Instruments</ul>*/}
         </div>
         <div style={{"width":"500px"}} className='flexRow'>
-            <ul className='navTextMedium'>PRODUCTS</ul>
-            <ul className='navTextMedium'>BLOG</ul>
-            <ul className='navTextMedium'>COMMUNITY</ul>
-            <ul className='navTextMedium'>SUPPORT</ul>
+            <Link to='/products' className='navTextMedium'>PRODUCTS</Link>
+            <Link to='/' className='navTextMedium'>BLOG</Link>
+            <Link to='/' className='navTextMedium'>COMMUNITY</Link>
+            <Link to='/' className='navTextMedium'>SUPPORT</Link>
         </div>
         <div style={{"width":"150px"}} className='flexRow'>
             <img className='aLink' style={{"height":"20px"}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQETV_iGZaujVjXGEEhzClQMErGjomXPTr7XfTj_qIltNDzqUwmAQ" alt=""/>

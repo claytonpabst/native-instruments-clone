@@ -6,6 +6,7 @@
 
 /*----------------Global------------------*/
 
+
 .flexRow{
     display: flex;
     justify-content: space-around;
@@ -17,9 +18,12 @@
     transform: scaleX(.8);
     height: 100%;
     padding-top: 25px;
+    text-decoration: none;
+    color: black;
 }
 .navTextMedium:hover{
     cursor: pointer;
+    border-bottom: 5px solid grey;
 }
 .aLink:hover{
     cursor: pointer;
