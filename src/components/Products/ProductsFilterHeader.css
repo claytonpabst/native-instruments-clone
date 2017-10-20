@@ -18,6 +18,6 @@
     transition: all .3s;
 }
 .pfhContentWrapper li:hover{
-    color: #19f;
+    color: #19f !important;
     cursor: pointer;
 }
