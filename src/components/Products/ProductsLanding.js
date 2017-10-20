@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MainHeader from './../Headers/MainHeader.js';
+import ProductsFilterHeader from './ProductsFilterHeader.js';
 
 
 class ProductsLanding extends Component {
@@ -9,6 +10,7 @@ class ProductsLanding extends Component {
       <div className="home">
 
           <MainHeader/>
+          <ProductsFilterHeader/>
 
       </div>
     );
