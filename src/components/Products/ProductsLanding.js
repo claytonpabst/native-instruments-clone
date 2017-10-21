@@ -9,9 +9,16 @@ class ProductsLanding extends Component {
     super(props)
 
     this.state = {
-
+      attributeToShow:'All'
     }
     //bind shit here
+    this.updateAttributeToShow = this.updateAttributeToShow.bind(this);
+  }
+
+  updateAttributeToShow(val){
+    this.setState({
+      attributeToShow:val
+    })
   }
 
   render() {
@@ -19,8 +26,8 @@ class ProductsLanding extends Component {
       <div className="home">
 
           <MainHeader/>
-          <ProductsFilterHeader/>
-          <ProductsLandingProducts/>
+          <ProductsFilterHeader updateAttributeToShow={this.updateAttributeToShow}/>
+          <ProductsLandingProducts attributeToShow={this.state.attributeToShow}/>
 
       </div>
     );
