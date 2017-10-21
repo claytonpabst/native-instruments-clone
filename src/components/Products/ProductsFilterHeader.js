@@ -31,7 +31,7 @@ class ProductsFilterHeader extends Component {
     return (
       <section className="pfhSection">
         <div className='pfhContentWrapper'>
-            <ul style={{"flex-wrap":"wrap"}} className='flexRow'>
+            <ul style={{"flexWrap":"wrap"}} className='flexRow'>
                 <li onClick={ ()=> { this.updateItemColors(0) }} style={{"color":`${this.state.itemColors[0]}`}}>All</li>
                 <li onClick={ ()=> { this.updateItemColors(1) }} style={{"color":`${this.state.itemColors[1]}`}}>Free</li>
                 <li onClick={ ()=> { this.updateItemColors(2) }} style={{"color":`${this.state.itemColors[2]}`}}>Bundles</li>

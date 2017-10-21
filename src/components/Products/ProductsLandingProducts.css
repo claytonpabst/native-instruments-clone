@@ -1,0 +1,42 @@
+.plpSection{
+    width: 100%;
+    padding: 30px;
+    background: #eee;
+}
+.plpContentWrapper{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.plpSingleProductWrapper{
+    width: 30%;
+    margin: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+    background: white;
+}
+.plpSingleProductWrapper img{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.plpSingleProductWrapper h1{
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 50px;
+    margin: 0 10px 0 10px;
+}
+.plpSingleProductWrapper p{
+    font-size: 15px;
+    font-weight: lighter;
+    line-height: 25px;
+    margin: 0 10px 40px 10px;
+}
+.plpSingleProductWrapper h3{
+    font-size: 18px;
+    font-weight: lighter;
+    line-height: 70px;
+
+}
