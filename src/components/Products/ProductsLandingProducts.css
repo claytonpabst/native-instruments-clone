@@ -23,10 +23,11 @@
     margin-bottom: 20px;
 }
 .plpSingleProductWrapper h1{
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
-    line-height: 50px;
+    line-height: 40px;
     margin: 0 10px 0 10px;
+    transform: scaleX(.9);
 }
 .plpSingleProductWrapper p{
     font-size: 15px;
