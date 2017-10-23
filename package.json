@@ -9,7 +9,7 @@
     "cors": "^2.8.3",
     "express": "^4.15.3",
     "express-session": "^1.15.3",
-    "massive": "^3.0.0",
+    "massive": "^3.3.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
