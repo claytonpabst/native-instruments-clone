@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import './ProductsLandingProducts.css';
 
@@ -108,6 +109,16 @@ class ProductsLandingProducts extends Component {
         ]
     }
     //bind shit here
+  }
+
+  componentDidMount(){
+    axios.get(`/api/getProducts`)
+    .then( res => {
+        console.log(res)
+        this.setState({
+            products: res.data
+        })
+    })        
   }
 
   render() {
