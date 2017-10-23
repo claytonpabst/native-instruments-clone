@@ -111,15 +111,15 @@ class ProductsLandingProducts extends Component {
     //bind shit here
   }
 
-//   componentDidMount(){
-//     axios.get(`/api/getProducts`)
-//     .then( res => {
-//         console.log(res)
-//         this.setState({
-//             products: res.data
-//         })
-//     })        
-//   }
+  componentDidMount(){
+    axios.get(`/api/getProducts`)
+    .then( res => {
+        console.log(res)
+        this.setState({
+            products: res.data
+        })
+    })        
+  }
 
   render() {
 
