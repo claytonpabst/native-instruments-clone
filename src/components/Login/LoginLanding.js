@@ -12,7 +12,8 @@ class LoginLanding extends Component {
 
     this.state = {
       usernameInput: '',
-      passwordInput: ''
+      passwordInput: '',
+      adminLogin: false
     }
     //bind shit here
     this.login = this.login.bind(this);
@@ -24,6 +25,13 @@ class LoginLanding extends Component {
     console.log('hit')
     axios.post(`/api/login`, {"username":this.state.usernameInput, "userpassword":this.state.passwordInput})
     .then( res => {
+      if(res.data[0].isadmin === true){
+        this.setState({
+          adminLogin: true,
+          usernameInput: '',
+          passwordInput: ''
+        })
+      }
       if(res.data.length){
         alert('Logged in as ' + res.data[0].username)
       }
@@ -42,16 +50,22 @@ class LoginLanding extends Component {
   }
 
   render() {
+    let adminLink = null;
+    if(this.state.adminLogin === true){
+      adminLink = <Link to='/admin'>Admin</Link>
+    }
     console.log(this.state);
     return (
       <section className="">
         <MainHeader/>
         <h1>Enter Username</h1>
-        <input onChange={this.handleUsernameInput} type="text"/>
+        <input value={this.state.usernameInput} onChange={this.handleUsernameInput} type="text"/>
         <br/>
         <h1>Enter Password</h1>
-        <input onChange={this.handlePasswordInput} type="text"/>
-        <Link to='/'><button onClick={this.login}>Login</button></Link>
+        <input value={this.state.passwordInput} onChange={this.handlePasswordInput} type="text"/>
+        <button onClick={this.login}>Login</button>
+        <br/>
+        {adminLink}
       </section>
     );
   }
