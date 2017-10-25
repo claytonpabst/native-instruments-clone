@@ -12,14 +12,22 @@ class LoginLanding extends Component {
 
     }
     //bind shit here
+    this.login = this.login.bind(this);
   }
 
+  login(){
+    console.log('hit')
+    axios.post(`/api/login`, {"username":'admin', "userpassword":'admin'})
+    .then( res => {
+        console.log(res)
+    })        
+  }
 
   render() {
 
     return (
       <section className="">
-
+        <button onClick={this.login}></button>
       </section>
     );
   }

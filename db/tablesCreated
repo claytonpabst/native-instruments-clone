@@ -48,3 +48,23 @@ insert into products (title, description, price, image, attributes) values (
 SELECT * FROM users 
 JOIN userpasswords ON userpasswords.password_id = users.id
 where username = 'user'
+
+create table users(
+    id serial not null primary key,
+    userName varchar(255) not null,
+    userPassword varchar(255) not null,
+    firstName varchar(255) not null,
+    lastName varchar(255) not null,
+    isAdmin BOOLEAN
+)
+
+insert into users (username, userpassword, firstname, lastname, isadmin) values ('admin', 'admin', 'Jane', 'Doe', true)
+
+create table cart(
+    id serial not null primary key,
+    productid integer,
+        Foreign key (productid) REFERENCES products(id)
+    quantity integer,
+    username varchar(255),
+        Foreign key (username) REFERENCES users(username)
+)

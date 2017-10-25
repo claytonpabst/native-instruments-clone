@@ -8,17 +8,17 @@ var config = require('./config.js');
 const app = module.exports = express();
 
 app.use(bodyParser.json());
-// app.use(session({
-//   secret: config.secret,
-//     resave: true,
-//     saveUninitialized: false,
-//     cookie:{
-//       maxAge: (1000*60*60*24*14) //this is 14 days
-//     }
-// }))
+app.use(session({
+  secret: config.secret,
+  resave: true,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: (1000 * 60 * 60 * 24 * 14) //this is 14 days
+  }
+}))
 
 massive(config.connection)
-.then( db => {
+.then(db => {
   app.set('db', db);
 })
 
@@ -31,6 +31,7 @@ const mainController = require('./mainController.js');
 
 // All Teller Controls
 app.get('/api/getProducts', mainController.getProducts);
+app.post('/api/login', mainController.login);
 
 
 
