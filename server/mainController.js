@@ -3,11 +3,9 @@ var app = require('./index.js');
 mainController = {
 
     getProducts: function(req, res){
-        console.log('hit')
         const db = req.app.get('db');
         db.getProducts()
         .then( products => {
-            console.log(products)
             return res.status(200).send( products )
         })
         .catch(err => {
@@ -22,7 +20,7 @@ mainController = {
         .then( response => {
             if(response.length){
                 req.session.isLoggedIn = true;
-                req.session.user = response[0].username;
+                req.session.user = response[0].id;
 
                 if(response[0].isadmin === true){
                     req.session.isAdmin = true
@@ -42,8 +40,30 @@ mainController = {
             res.status(500).send(err)
         })        
     },
-    loadCart(){
+    loadCart: function(){
         console.log('loadCart hit')
+    },
+    addToCart: function(req, res){
+        const db = req.app.get('db');        
+        db.getCart([req.session.user])
+        .then( response => {
+            for(let i=0; i<response.length; i++){
+                if(response[i].productid === req.body.productID){
+                    let quantity = response[i].quantity;
+                    quantity++;
+                    db.addOneToQuantityInCart([req.body.productID, quantity, req.session.user])
+                    .then(response => {
+                       return res.status(200).send(response)
+                    })
+                    return
+                }
+            }
+            db.addProductToCart([req.body.productID, req.session.user])
+            .then( response => {
+                return res.status(200).send(response)
+            })
+            console.log(response)
+        })
     }
 }
 

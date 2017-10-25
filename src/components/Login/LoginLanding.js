@@ -17,7 +17,7 @@ class LoginLanding extends Component {
 
   login(){
     console.log('hit')
-    axios.post(`/api/login`, {"username":'admin', "userpassword":'admin'})
+    axios.post(`/api/login`, {"username":'user', "userpassword":'user'})
     .then( res => {
         console.log(res)
     })        

@@ -12,6 +12,7 @@ class ProductsLandingProducts extends Component {
         products:[]
     }
     //bind shit here
+    this.addToCart = this.addToCart.bind(this);
   }
 
   componentDidMount(){
@@ -22,6 +23,13 @@ class ProductsLandingProducts extends Component {
             products: res.data
         })
     })        
+  }
+
+  addToCart(productID){
+      axios.post('/api/addToCart', {"productID":productID})
+      .then(res =>{
+          console.log(res);
+      })
   }
 
   render() {
@@ -35,6 +43,7 @@ class ProductsLandingProducts extends Component {
                             <h1>{product.title}</h1>
                             <p>{product.description}</p>
                             <h3>{product.price}</h3>
+                            <h5 onClick={() => this.addToCart(product.id)}>Buy Now</h5>
                         </div>
                     )
                 }
