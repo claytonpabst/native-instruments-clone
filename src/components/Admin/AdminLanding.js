@@ -22,6 +22,7 @@ class AdminLanding extends Component {
     this.handleDescriptionInput = this.handleDescriptionInput.bind(this);
     this.handlePriceInput = this.handlePriceInput.bind(this);
     this.handleAttributesInput = this.handleAttributesInput.bind(this);
+    this.submit = this.submit.bind(this);
   }
 
   handleImageInput(e){
@@ -51,8 +52,18 @@ class AdminLanding extends Component {
     })
   }
 
+  submit() {
+    axios.post('/api/addProduct', { "title": this.state.titleInput, 
+                                    "description": this.state.descriptionInput, 
+                                    "price": this.state.priceInput, 
+                                    "image": this.state.imageInput, 
+                                    "attributes": this.state.attributesInput})
+        .then(res => {
+            alert(res);
+        })
+  }
+
   render() {
-    console.log(this.state);
     return (
       <section className="">
         <MainHeader/>
@@ -71,7 +82,7 @@ class AdminLanding extends Component {
         <h1>Attributes (Attributes should be capitalized and separated by a space only.)</h1>
         <input onChange={this.handleAttributesInput} type="text"/>
         <br/>
-        <button onClick={this.Submit}>Submit</button>
+        <button onClick={this.submit}>Submit</button>
         <br/>
         <div className='plpSingleProductWrapper'>
             <img src={this.state.imageInput} alt="" />

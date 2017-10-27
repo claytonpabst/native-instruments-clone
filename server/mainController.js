@@ -64,6 +64,21 @@ mainController = {
             })
             console.log(response)
         })
+    },
+    addProduct: function(req, res){
+        const db = req.app.get('db');
+        console.log(req.body)
+        if(req.session.isAdmin === false){
+            return res.status(200).send( 'This function requires being logged in as an admin.' )
+        }
+        db.addProduct([req.body.title, req.body.description, req.body.price, req.body.image, req.body.attributes])
+        .then( product => {
+            return res.status(200).send( product )
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(500).send(err)
+        })
     }
 }
 

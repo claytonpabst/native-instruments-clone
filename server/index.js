@@ -33,6 +33,7 @@ const mainController = require('./mainController.js');
 app.get('/api/getProducts', mainController.getProducts);
 app.post('/api/login', mainController.login);
 app.post('/api/addToCart', mainController.addToCart);
+app.post('/api/addProduct', mainController.addProduct);
 
 
 
