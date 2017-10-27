@@ -17,7 +17,21 @@ class CartLanding extends Component {
   render() {
     return (
       <section className="">
-        <MainHeader/>      
+        <MainHeader/>
+        <div className='clCartHeader'>
+          <h1>Shopping Cart</h1>
+        </div>   
+        <section className='clContentSection'>
+          <div className='clContentWrapper'>
+            <div className='clContentDescriptionHeader'>
+              <h1 style={{"width":"10%"}}>Image</h1>
+              <h1 style={{"width":"10%"}}>Product</h1>
+              <h1>Price</h1>
+              <h1>Quantity</h1>
+              <h1>Total</h1>
+            </div>
+          </div>
+        </section>
       </section>
     );
   }

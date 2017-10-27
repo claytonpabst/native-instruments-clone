@@ -1,0 +1,26 @@
+.clCartHeader{
+  width:100%;
+  height: 60px;
+  background: #333;
+}
+.clCartHeader h1{
+  color: white;
+  font-size: 30px;
+  line-height: 60px;
+  width: fit-content;
+  margin-left: 10px;
+  letter-spacing: 4px;
+  transform: scale(.7, 1);
+}
+.clContentSection{
+  background: orange;
+  width: 100%;
+  padding: 50px;
+}
+.clContentWrapper{
+  width: 100%;
+  height: fit-content;
+}
+.clContentDescriptionHeader h1{
+  background: pink;
+}
