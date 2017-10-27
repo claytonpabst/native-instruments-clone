@@ -26,13 +26,12 @@ mainController = {
                     req.session.isAdmin = true
                 } else {
                     req.session.isAdmin = false
-                } 
+                }
             } else {
                 return res.status(200).send('Invalid username or password.')
-            } 
+            }
             console.log(response)
             console.log(req.session)
-            mainController.loadCart()
             return res.status(200).json( response )
         })
         .catch(err => {
@@ -67,13 +66,14 @@ mainController = {
     },
     addProduct: function(req, res){
         const db = req.app.get('db');
-        console.log(req.body)
-        if(req.session.isAdmin === false){
+        console.log(req.session)
+        if(req.session.isAdmin === false || !req.session.isAdmin){
             return res.status(200).send( 'This function requires being logged in as an admin.' )
         }
         db.addProduct([req.body.title, req.body.description, req.body.price, req.body.image, req.body.attributes])
         .then( product => {
-            return res.status(200).send( product )
+            console.log(product)
+            return res.status(200).send( req.body.title + ' was added to the products database.' )
         })
         .catch(err => {
             console.log(err)

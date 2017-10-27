@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 import MainHeader from './../Headers/MainHeader.js';
 
 import './AdminLanding.css';
@@ -59,7 +60,8 @@ class AdminLanding extends Component {
                                     "image": this.state.imageInput, 
                                     "attributes": this.state.attributesInput})
         .then(res => {
-            alert(res);
+          console.log(res);
+          alert(res.data);
         })
   }
 
@@ -82,7 +84,7 @@ class AdminLanding extends Component {
         <h1>Attributes (Attributes should be capitalized and separated by a space only.)</h1>
         <input onChange={this.handleAttributesInput} type="text"/>
         <br/>
-        <button onClick={this.submit}>Submit</button>
+        <Link to='/products'><button onClick={this.submit}>Submit</button></Link>
         <br/>
         <div className='plpSingleProductWrapper'>
             <img src={this.state.imageInput} alt="" />
