@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import MainHeader from './../Headers/MainHeader.js';
+import MainFooter from './../Footers/MainFooter.js';
 
 import './CartLanding.css';
 
@@ -69,6 +70,7 @@ class CartLanding extends Component {
             { productsInCart }
           </div>
         </section>
+        <MainFooter/>
       </section>
     );
   }

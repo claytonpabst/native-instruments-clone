@@ -4,6 +4,7 @@ import LandingVideo from './../LandingVideo/LandingVideo.js';
 import LandingTeaserStories from './../Landing/LandingTeaserStories.js';
 import LandingFeaturedProducts from './../Landing/LandingFeaturedProducts.js';
 import LandingMoreStories from './../Landing/LandingMoreStories.js';
+import MainFooter from './../Footers/MainFooter.js';
 
 import './Home.css';
 
@@ -19,6 +20,7 @@ class Home extends Component {
           <LandingTeaserStories/>
           <LandingFeaturedProducts/>
           <LandingMoreStories/>
+          <MainFooter/>
 
       </div>
     );

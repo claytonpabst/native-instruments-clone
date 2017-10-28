@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MainHeader from './../Headers/MainHeader.js';
 import ProductsFilterHeader from './ProductsFilterHeader.js';
 import ProductsLandingProducts from './ProductsLandingProducts.js';
+import MainFooter from './../Footers/MainFooter.js';
 
 
 class ProductsLanding extends Component {
@@ -28,6 +29,7 @@ class ProductsLanding extends Component {
           <MainHeader/>
           <ProductsFilterHeader updateAttributeToShow={this.updateAttributeToShow}/>
           <ProductsLandingProducts attributeToShow={this.state.attributeToShow}/>
+          <MainFooter/>
 
       </div>
     );
