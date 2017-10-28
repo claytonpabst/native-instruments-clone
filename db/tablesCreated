@@ -68,3 +68,7 @@ create table cart(
     username varchar(255),
         Foreign key (username) REFERENCES users(username)
 )
+
+select * from cart 
+JOIN products ON products.id = cart.productid
+where userid = 1

@@ -18,6 +18,8 @@
 }
 .clContentWrapper{
   width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
   height: fit-content;
 }
 .clContentDescriptionHeader{
