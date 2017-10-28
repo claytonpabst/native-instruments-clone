@@ -18,14 +18,39 @@ class CartLanding extends Component {
   componentDidMount() {
     axios.get(`/api/getProductsInCart`)
       .then(res => {
-        console.log(res)
         this.setState({
             productsInCart: res.data
         })
       })
   }
 
+  strToInt(str, qnt){
+    let total = str;
+    total = total.split('$')[1]
+    total = parseInt(total.split(',').join(''))
+    total = total * qnt
+    total = total.toLocaleString()
+    return total
+  }
+
   render() {
+
+    let productsInCart = this.state.productsInCart.length ?
+      this.state.productsInCart.map((product, i) => {
+        let total = this.strToInt(product.price, product.quantity)
+        return (
+          <div className='clContentSingleItem' key={i}>
+            <div style={{"width":"12%"}}>
+              <img src={product.image} alt=""/>
+            </div>
+            <div style={{"width":"53%"}}>{product.title}</div>
+            <div style={{"width":"10%"}}>{product.price}</div>
+            <div style={{"width":"15%"}}>{product.quantity}</div>
+            <div style={{"width":"10%"}}>${total}.00</div>
+          </div>          
+        )
+      }): null;
+
     return (
       <section className="">
         <MainHeader/>
@@ -41,24 +66,7 @@ class CartLanding extends Component {
               <h1 style={{"width":"15%"}}>Quantity</h1>
               <h1 style={{"width":"10%"}}>Total</h1>
             </div>
-            <div className='clContentSingleItem'>
-              <div style={{"width":"12%"}}>
-                <img src="https://shop.native-instruments.com/media/catalog/product/cache/1/thumbnail/120x/9df78eab33525d08d6e5fb8d27136e95/s/y/symphony-series-collection_shop_1.png" alt=""/>
-              </div>
-              <div style={{"width":"53%"}}>Product</div>
-              <div style={{"width":"10%"}}>Price</div>
-              <div style={{"width":"15%"}}>Quantity</div>
-              <div style={{"width":"10%"}}>Total</div>
-            </div>
-            <div className='clContentSingleItem'>
-              <div style={{"width":"12%"}}>
-                <img src="https://shop.native-instruments.com/media/catalog/product/cache/1/thumbnail/120x/9df78eab33525d08d6e5fb8d27136e95/s/y/symphony-series-collection_shop_1.png" alt=""/>
-              </div>
-              <div style={{"width":"53%"}}>Product</div>
-              <div style={{"width":"10%"}}>Price</div>
-              <div style={{"width":"15%"}}>Quantity</div>
-              <div style={{"width":"10%"}}>Total</div>
-            </div>
+            { productsInCart }
           </div>
         </section>
       </section>
