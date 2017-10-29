@@ -54,3 +54,47 @@
 .clContentSingleItem div:nth-child(5){
   text-align: right;
 }
+.clCheckoutSection{
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.clCheckoutWrapperLeft h1{
+  background: lightblue;
+  padding: 10px;
+}
+.clCheckoutWrapperRight{
+  width: 320px;
+  display: flex;
+}
+.clCheckoutWrapperRight div{
+  margin-left:40px;
+}
+.clCheckoutWrapperRight h1{
+  font-weight: lighter;
+  padding-bottom: 20px;
+  text-align: right;
+}
+.clCheckoutWrapperRight h3{
+  padding-bottom: 20px;
+  text-align: right;
+  font-weight: bold;
+}
+.clCheckoutWrapperRight h5{
+  background: lightblue;
+  padding: 20px;
+}
+.clCheckoutButton{
+  padding: 20px;
+  margin-right: 20px;
+  position: relative;
+}
+.clCheckoutButton h1{
+  padding: 20px;
+  margin-top: -20px;
+  position: absolute;
+  right: 0px;
+  background: lightblue;
+  text-align: right;
+}

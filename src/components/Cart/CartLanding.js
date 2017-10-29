@@ -68,6 +68,26 @@ class CartLanding extends Component {
               <h1 style={{"width":"10%"}}>Total</h1>
             </div>
             { productsInCart }
+            <div className='clCheckoutSection'> 
+              <div className='clCheckoutWrapperLeft'>
+                <h1>CONTINUE SHOPPING</h1>
+              </div>
+              <div className='clCheckoutWrapperRight'>
+                <div>
+                  <h1>Subtotal</h1>    
+                  <h1>Order Total Excl. Tax</h1>    
+                  <h1>incl. Tax</h1>    
+                  <h3>Order Total</h3>    
+                </div>
+                <div>
+                  <h1>Subtotal</h1>    
+                  <h1>Order Total</h1>    
+                  <h1>incl. Tax</h1>    
+                  <h3>Order Total</h3>
+                </div>
+              </div>
+            </div>
+            <div className='clCheckoutButton'><h1>CHECKOUT</h1></div> 
           </div>
         </section>
         <MainFooter/>
