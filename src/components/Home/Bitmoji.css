@@ -1,0 +1,10 @@
+.bitmojiSection{
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  width: 600px;
+  height: 400px;
+  background: #333;
+  opacity: .8;
+  z-index: 999;
+}

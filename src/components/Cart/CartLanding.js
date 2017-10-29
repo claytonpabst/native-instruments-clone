@@ -25,7 +25,7 @@ class CartLanding extends Component {
       })
   }
 
-  strToInt(str, qnt){
+  productTotal(str, qnt){
     let total = str;
     total = total.split('$')[1]
     total = parseInt(total.split(',').join(''))
@@ -34,7 +34,7 @@ class CartLanding extends Component {
     return total
   }
 
-  subTotal(){
+  orderTotal(){
     let x = this.state.productsInCart;
     let total = 0;
     for(let i=0; i<x.length; i++){
@@ -50,7 +50,7 @@ class CartLanding extends Component {
 
     let productsInCart = this.state.productsInCart.length ?
       this.state.productsInCart.map((product, i) => {
-        let total = this.strToInt(product.price, product.quantity)
+        let total = this.productTotal(product.price, product.quantity)
         return (
           <div className='clContentSingleItem' key={i}>
             <div style={{"width":"12%"}}>
@@ -65,7 +65,7 @@ class CartLanding extends Component {
       }): null;
 
     let subTotal = this.state.productsInCart.length ?
-      this.subTotal()
+      this.orderTotal()
       :'0.00'
 
     return (
