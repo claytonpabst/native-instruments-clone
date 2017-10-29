@@ -34,6 +34,18 @@ class CartLanding extends Component {
     return total
   }
 
+  subTotal(){
+    let x = this.state.productsInCart;
+    let total = 0;
+    for(let i=0; i<x.length; i++){
+      let iteration = x[i].price.split('$')[1];
+      iteration = parseInt(iteration.split(',').join(''));
+      total = total + (iteration * x[i].quantity);
+    }
+    total = total.toLocaleString();
+    return total
+  }
+
   render() {
 
     let productsInCart = this.state.productsInCart.length ?
@@ -51,6 +63,10 @@ class CartLanding extends Component {
           </div>          
         )
       }): null;
+
+    let subTotal = this.state.productsInCart.length ?
+      this.subTotal()
+      :'0.00'
 
     return (
       <section className="">
@@ -80,10 +96,10 @@ class CartLanding extends Component {
                   <h3>Order Total</h3>    
                 </div>
                 <div>
-                  <h1>Subtotal</h1>    
-                  <h1>Order Total</h1>    
-                  <h1>incl. Tax</h1>    
-                  <h3>Order Total</h3>
+                  <h1>${subTotal}.00</h1>    
+                  <h1>${subTotal}.00</h1>    
+                  <h1>0.00</h1>    
+                  <h3>${subTotal}.00</h3>
                 </div>
               </div>
             </div>
