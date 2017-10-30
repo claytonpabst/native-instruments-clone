@@ -6,6 +6,7 @@
   height: 310px;;
   background: #333;
   z-index: 999;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 .bitmojiImage{
   width: 300px;
@@ -24,5 +25,22 @@
   padding: 20px;
 }
 .bitmojiText p{
-  line-height: 20px;
+  line-height: 18px;
+  font-size: 15px;
+}
+.bitmojiText a{
+  color: lightblue;
+}
+.bitmojiX{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  padding: 3px 5px;
+  background: #ccc;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+.bitmojiX:hover{
+    background: #fff;
+    cursor: pointer;
 }

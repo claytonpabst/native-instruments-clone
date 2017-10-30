@@ -18,13 +18,23 @@ class Home extends Component {
       showBitmoji: true
     }
     //bind shit here
+    this.showBitmoji = this.showBitmoji.bind(this);
+  }
+
+  showBitmoji(){
+    this.setState({
+      showBitmoji: false
+    })
   }
 
   render() {
+
+    let bitmoji = this.state.showBitmoji ? <Bitmoji showBitmoji={this.showBitmoji}/> : null
+
     return (
       <div className="home">
           
-          <Bitmoji/>
+          {bitmoji}
           <MainHeader/>
           <LandingVideo/>
           <LandingTeaserStories/>
