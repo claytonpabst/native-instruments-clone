@@ -24,8 +24,8 @@ class Bitmoji extends Component {
               Try out the cart functionality by logging in as a user. <br/><br/>username: user <br/>password: user
               <br/><br/>&#160;&#160;&#160;&#160;Or, log in as an admin and try out adding products through the mini CMS. <br/><br/>
               username: admin <br/>password: admin
-              <br/><br/>&#160;&#160;&#160;&#160;3 minute video walkthrough for this project:<br/>
-              <a href="">blah.com</a>
+              <br/><br/>&#160;&#160;&#160;&#160;4 minute video walkthrough for this project:<br/>
+              <a target='_blank' href="https://youtu.be/nwBvaACZ6Dc">Video</a>
           </p>
         </div>
       </div>

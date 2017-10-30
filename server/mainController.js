@@ -15,14 +15,18 @@ mainController = {
     },
     getProductsInCart: function(req, res){
         const db = req.app.get('db');
-        db.getProductsInCart()
-        .then( productsInCart => {
-            return res.status(200).send( productsInCart )
-        })
-        .catch(err => {
-            console.log(err)
-            res.status(500).send(err)
-        })
+        if(req.session.isLoggedIn){
+            db.getProductsInCart()
+            .then( productsInCart => {
+                return res.status(200).send( productsInCart )
+            })
+            .catch(err => {
+                console.log(err)
+                res.status(500).send(err)
+            })
+        } else {
+            return res.status(200).send([])
+        }
     },
     login: function(req, res){
         console.log('hit')

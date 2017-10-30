@@ -60,9 +60,13 @@
   display: flex;
   justify-content: space-between;
 }
+.clCheckoutWrapperLeft{
+  text-decoration: none;
+}
 .clCheckoutWrapperLeft h1{
   background: lightblue;
   padding: 10px;
+  color: black;
 }
 .clCheckoutWrapperRight{
   width: 320px;

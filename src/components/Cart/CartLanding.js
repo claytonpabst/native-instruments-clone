@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 import MainHeader from './../Headers/MainHeader.js';
 import MainFooter from './../Footers/MainFooter.js';
 
@@ -85,9 +86,9 @@ class CartLanding extends Component {
             </div>
             { productsInCart }
             <div className='clCheckoutSection'> 
-              <div className='clCheckoutWrapperLeft'>
+              <Link to='/products' className='clCheckoutWrapperLeft'>
                 <h1>CONTINUE SHOPPING</h1>
-              </div>
+              </Link>
               <div className='clCheckoutWrapperRight'>
                 <div>
                   <h1>Subtotal</h1>    
