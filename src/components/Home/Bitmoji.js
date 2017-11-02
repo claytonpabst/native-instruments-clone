@@ -22,7 +22,7 @@ class Bitmoji extends Component {
         <div className='bitmojiText'>
           <p> &#160;&#160;&#160;&#160;Hi! I'm Clayton Pabst, welcome to my clone of Native Instruments.
               Try out the cart functionality by logging in as a user. <br/><br/>username: user <br/>password: user
-              <br/><br/>&#160;&#160;&#160;&#160;Or, log in as an admin and try out adding products through the mini CMS. <br/><br/>
+              <br/><br/>&#160;&#160;&#160;&#160;Or, log in as an admin and try out managing products through the custom CMS. <br/><br/>
               username: admin <br/>password: admin
               <br/><br/>&#160;&#160;&#160;&#160;4 minute video walkthrough for this project:<br/>
               <a target='_blank' href="https://youtu.be/nwBvaACZ6Dc">Video</a>
