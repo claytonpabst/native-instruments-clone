@@ -29,12 +29,12 @@ var userController = require("./userController.js");
 //////////Endpoints for the front end
 const mainController = require('./mainController.js');
 
-// All Teller Controls
 app.get('/api/getProducts', mainController.getProducts);
 app.get('/api/getProductsInCart', mainController.getProductsInCart);
 app.post('/api/login', mainController.login);
 app.post('/api/addToCart', mainController.addToCart);
 app.post('/api/addProduct', mainController.addProduct);
+app.delete('/api/deleteProduct', mainController.deleteProduct);
 
 
 

@@ -88,12 +88,31 @@ mainController = {
         db.addProduct([req.body.title, req.body.description, req.body.price, req.body.image, req.body.attributes])
         .then( product => {
             console.log(product)
-            return res.status(200).send( req.body.title + ' was added to the products database.' )
+            return res.status(200).send( req.body.title + " was added to the product's database." )
         })
         .catch(err => {
             console.log(err)
             res.status(500).send(err)
         })
+    },
+    deleteProduct: function(req, res){
+        console.log(req.query)
+        const db = req.app.get('db');
+        if(req.session.isAdmin === false || !req.session.isAdmin){
+            return res.status(200).send( 'This function requires being logged in as an admin.' )
+        }
+        db.deleteProductFromCart([req.query.productID])
+        .then( product => {
+        })
+
+        db.deleteProductFromProducts([req.query.productID])
+        .then( product => {
+            return res.status(200).send( req.query.productTitle + " was deleted from the product's database." )
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(500).send(err)
+        })        
     }
 }
 

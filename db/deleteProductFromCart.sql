@@ -1,0 +1,1 @@
+delete from cart where productid = $1
