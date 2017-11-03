@@ -125,7 +125,7 @@ class AdminLanding extends Component {
 
     return (
       <section className="">
-        <MainHeader/>
+        <MainHeader />
         <div className='clCartHeader'>
           <h1>Admin Portal</h1>
         </div> 

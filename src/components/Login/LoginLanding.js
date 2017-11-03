@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import MainHeader from './../Headers/MainHeader.js';
 
 import './LoginLanding.css';
 
@@ -31,6 +30,7 @@ class LoginLanding extends Component {
           usernameInput: '',
           passwordInput: ''
         })
+        this.props.updateIsAdmin(true);
       }
       if(res.data.length){
         alert('Logged in as ' + res.data[0].username)
@@ -50,22 +50,22 @@ class LoginLanding extends Component {
   }
 
   render() {
-    let adminLink = null;
-    if(this.state.adminLogin === true){
-      adminLink = <Link to='/admin'>Admin</Link>
-    }
-    console.log(this.state);
+
+    let loginLandingSectionStyle = !this.props.showLogin ?
+      {"height": "0px","padding": "0px"}:
+      {"height": "fit-content","padding": "30px"};
+
     return (
-      <section className="">
-        <MainHeader/>
-        <h1>Enter Username</h1>
-        <input value={this.state.usernameInput} onChange={this.handleUsernameInput} type="text"/>
-        <br/>
-        <h1>Enter Password</h1>
-        <input value={this.state.passwordInput} onChange={this.handlePasswordInput} type="text"/>
-        <button onClick={this.login}>Login</button>
-        <br/>
-        {adminLink}
+      <section style={loginLandingSectionStyle} id="loginLandingSection">
+        <div>
+          <h1>Enter Username</h1>
+          <input value={this.state.usernameInput} onChange={this.handleUsernameInput} type="text"/>
+          <br/>
+          <h1>Enter Password</h1>
+          <input value={this.state.passwordInput} onChange={this.handlePasswordInput} type="text"/>
+          <button onClick={this.login}>Login</button>
+          <br/>
+        </div>
       </section>
     );
   }
