@@ -13,6 +13,7 @@
 }
 .plpSingleProductWrapper{
     width: 30%;
+    max-width: 420px;
     margin: 15px;
     text-align: center;
     border: 1px solid #ddd;
@@ -35,6 +36,8 @@
     font-weight: lighter;
     line-height: 25px;
     margin: 0 10px 40px 10px;
+    height: fit-content;
+    overflow-wrap: break-word;
 }
 .plpSingleProductWrapper h3{
     font-size: 18px;

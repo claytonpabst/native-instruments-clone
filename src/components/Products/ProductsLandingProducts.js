@@ -38,7 +38,7 @@ class ProductsLandingProducts extends Component {
             products = this.state.products.map((product, i) => {
                 if (product.attributes.indexOf(this.props.attributeToShow) > -1) {
                     return (
-                        <div className='plpSingleProductWrapper' key={i}>
+                        <div draggable="true" className='plpSingleProductWrapper' key={i}>
                             <img src={product.image} alt="" />
                             <h1>{product.title}</h1>
                             <p>{product.description}</p>

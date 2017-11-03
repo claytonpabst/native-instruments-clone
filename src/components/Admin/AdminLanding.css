@@ -1,0 +1,27 @@
+.alAddNewProductSectionParent{
+  width: 100%;
+  background: #ccc;
+}
+.alAddNewProductSection{
+  padding: 30px;
+  height: fit-content;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.alInputsWrapper{
+  float: left;
+  width: 50%;
+}
+.alInputsWrapper input{
+  width: 90%;
+  margin: 5px;
+}
+.alInputsWrapper textarea{
+  width: 90%;
+  margin: 5px;
+  height: 60px;
+}
+.alProductPreview{
+  margin-left: 50%;
+}
