@@ -11,16 +11,25 @@ class MainHeader extends Component {
 
         this.state = {
             isAdmin: false,
-            showLogin: false
+            showLogin: false,
+            userName: ''
         }
         //bind shit here
         this.updateShowLogin = this.updateShowLogin.bind(this);
+        this.updateIsAdmin = this.updateIsAdmin.bind(this);
     }
 
     updateShowLogin(){
         let val = this.state.showLogin ? false : true;
         this.setState({
             showLogin: val
+        })
+    }
+
+    updateIsAdmin(val, name){
+        this.setState({
+            isAdmin:val,
+            userName: name
         })
     }
 
@@ -36,6 +45,10 @@ class MainHeader extends Component {
         let adminProtalLink = this.state.isAdmin ?
             <Link to='/admin' className='navTextMedium'>ADMIN PORTAL</Link> :
             null;
+        
+        let loginIcon = this.state.userName === '' ?
+            <img onClick={this.updateShowLogin} className='aLink' style={{ "height": "20px" }} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQETV_iGZaujVjXGEEhzClQMErGjomXPTr7XfTj_qIltNDzqUwmAQ" alt="" />:
+            <h1>{this.state.userName}</h1>
 
         return (
             <section>
@@ -57,7 +70,9 @@ class MainHeader extends Component {
                         <img className='aLink' style={{ "height": "20px" }} src="https://maxcdn.icons8.com/Share/icon/p1em/Very_Basic//search1600.png" alt="" />
                     </div>
                 </div>
-                <LoginLanding showLogin={this.state.showLogin}/>
+                <LoginLanding   showLogin={this.state.showLogin}
+                                updateIsAdmin={this.updateIsAdmin}
+                                updateShowLogin={this.updateShowLogin}/>
             </section>
         );
     }

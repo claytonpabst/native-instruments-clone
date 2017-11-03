@@ -30,10 +30,11 @@ class LoginLanding extends Component {
           usernameInput: '',
           passwordInput: ''
         })
-        this.props.updateIsAdmin(true);
+        this.props.updateIsAdmin(true, res.data[0].username);
       }
       if(res.data.length){
         alert('Logged in as ' + res.data[0].username)
+        this.props.updateShowLogin()
       }
     })   
   }
