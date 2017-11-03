@@ -35,6 +35,7 @@ app.post('/api/login', mainController.login);
 app.post('/api/addToCart', mainController.addToCart);
 app.post('/api/addProduct', mainController.addProduct);
 app.delete('/api/deleteProduct', mainController.deleteProduct);
+app.patch('/api/updateProduct', mainController.updateProduct);
 
 
 

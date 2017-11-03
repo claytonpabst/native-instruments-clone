@@ -113,6 +113,20 @@ mainController = {
             console.log(err)
             res.status(500).send(err)
         })        
+    },
+    updateProduct: function(req, res){
+        const db = req.app.get('db');
+        if(req.session.isAdmin === false || !req.session.isAdmin){
+            return res.status(200).send( 'This function requires being logged in as an admin.' )
+        }
+        db.updateProduct([req.body.title, req.body.description, req.body.price, req.body.image, req.body.attributes, req.body.productID])
+        .then( product => {
+            return res.status(200).send( req.body.title + " was updated in the product's database." )
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(500).send(err)
+        })         
     }
 }
 

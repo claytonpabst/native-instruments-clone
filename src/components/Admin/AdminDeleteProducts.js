@@ -13,12 +13,17 @@ class AdminDeleteProducts extends Component {
   }
 
   componentDidMount() {
+    this.props.onRef(this)
     axios.get(`/api/getProducts`)
       .then(res => {
         this.setState({
           products: res.data
         })
       })
+  }
+
+  componentWillUnmount() {
+    this.props.onRef(undefined)
   }
 
   deleteProduct(id, title){

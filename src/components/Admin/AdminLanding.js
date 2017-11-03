@@ -59,15 +59,32 @@ class AdminLanding extends Component {
   }
 
   submit() {
-    axios.post('/api/addProduct', { "title": this.state.titleInput, 
-                                    "description": this.state.descriptionInput, 
-                                    "price": this.state.priceInput, 
-                                    "image": this.state.imageInput, 
-                                    "attributes": this.state.attributesInput})
-        .then(res => {
-          console.log(res);
-          alert(res.data);
-        })
+    if(this.state.editClicked){
+      axios.patch('/api/updateProduct', { "productID": this.state.productID,
+                                          "title": this.state.titleInput, 
+                                          "description": this.state.descriptionInput, 
+                                          "price": this.state.priceInput, 
+                                          "image": this.state.imageInput, 
+                                          "attributes": this.state.attributesInput})
+          .then(res => {
+            console.log(res);
+            alert(res.data);
+            this.cancelEdit();
+            this.child.componentDidMount()
+          })
+    } else {
+      axios.post('/api/addProduct', { "title": this.state.titleInput, 
+                                      "description": this.state.descriptionInput, 
+                                      "price": this.state.priceInput, 
+                                      "image": this.state.imageInput, 
+                                      "attributes": this.state.attributesInput})
+          .then(res => {
+            console.log(res);
+            alert(res.data);
+            this.cancelEdit();
+            this.child.componentDidMount()
+          })
+    }
   }
 
   editProduct(id,image,title,description,price,attributes){
@@ -124,7 +141,7 @@ class AdminLanding extends Component {
         <h1>Attributes (Attributes should be capitalized and separated by a space only.)</h1>
         <input value={this.state.attributesInput} onChange={this.handleAttributesInput} type="text"/>
         <br/>
-        <Link to='/products'><button onClick={this.submit}>Submit</button></Link>
+        <button onClick={this.submit}>Submit</button>
         {cancelEdit}
         <br/>
         <div className='plpSingleProductWrapper'>
@@ -134,7 +151,7 @@ class AdminLanding extends Component {
             <h3>{this.state.priceInput === '' ? defaultPrice : this.state.priceInput}</h3>
             <h5>Buy Now</h5>
         </div>
-        <AdminDeleteProducts editProduct={this.editProduct}/>  
+        <AdminDeleteProducts onRef={ref => (this.child = ref)} editProduct={this.editProduct}/>  
       </section>
     );
   }
