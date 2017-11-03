@@ -4,19 +4,24 @@ import LoginLanding from './../Login/LoginLanding.js';
 
 import './MainHeader.css';
 
+let mainHeaderState = {
+    isAdmin: false,
+    showLogin: false,
+    userName: ''
+}
 
 class MainHeader extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            isAdmin: false,
-            showLogin: false,
-            userName: ''
-        }
+        this.state = mainHeaderState
         //bind shit here
         this.updateShowLogin = this.updateShowLogin.bind(this);
         this.updateIsAdmin = this.updateIsAdmin.bind(this);
+    }
+
+    componentWillUnmount(){
+        mainHeaderState = this.state;
     }
 
     updateShowLogin(){
@@ -48,7 +53,7 @@ class MainHeader extends Component {
         
         let loginIcon = this.state.userName === '' ?
             <img onClick={this.updateShowLogin} className='aLink' style={{ "height": "20px" }} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQETV_iGZaujVjXGEEhzClQMErGjomXPTr7XfTj_qIltNDzqUwmAQ" alt="" />:
-            <h1>{this.state.userName}</h1>
+            <h1 onClick={this.updateShowLogin} className='aLink' style={{"height": "20px"}}>{this.state.userName}</h1>
 
         return (
             <section>
@@ -65,7 +70,7 @@ class MainHeader extends Component {
                         {adminProtalLink}
                     </div>
                     <div style={{ "width": "150px" }} className='flexRow'>
-                        <img onClick={this.updateShowLogin} className='aLink' style={{ "height": "20px" }} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQETV_iGZaujVjXGEEhzClQMErGjomXPTr7XfTj_qIltNDzqUwmAQ" alt="" />
+                        {loginIcon}
                         <Link to='/cart'><img className='aLink' style={{ "height": "20px" }} src="https://d30y9cdsu7xlg0.cloudfront.net/png/5641-200.png" alt="" /></Link>
                         <img className='aLink' style={{ "height": "20px" }} src="https://maxcdn.icons8.com/Share/icon/p1em/Very_Basic//search1600.png" alt="" />
                     </div>

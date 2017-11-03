@@ -31,6 +31,13 @@ class LoginLanding extends Component {
           passwordInput: ''
         })
         this.props.updateIsAdmin(true, res.data[0].username);
+      } else if (res.data.length && res.data[0].isadmin === false) {
+        this.setState({
+          adminLogin: false,
+          usernameInput: '',
+          passwordInput: ''
+        })
+        this.props.updateIsAdmin(false, res.data[0].username)
       }
       if(res.data.length){
         alert('Logged in as ' + res.data[0].username)
@@ -53,8 +60,8 @@ class LoginLanding extends Component {
   render() {
 
     let loginLandingSectionStyle = !this.props.showLogin ?
-      {"height": "0px","padding": "0px"}:
-      {"height": "fit-content","padding": "30px"};
+      {"height": "0px","padding": "0px", "left":"100%"}:
+      {"height": "fit-content","padding": "30px","left":"0%"};
 
     return (
       <section style={loginLandingSectionStyle} id="loginLandingSection">
