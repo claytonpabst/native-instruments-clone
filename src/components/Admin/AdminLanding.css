@@ -16,11 +16,19 @@
 .alInputsWrapper input{
   width: 90%;
   margin: 5px;
+  border: 1px solid #777;
+  height: 16px;
 }
 .alInputsWrapper textarea{
   width: 90%;
   margin: 5px;
   height: 60px;
+}
+.alInputsWrapper input:hover{
+  border: 1px solid #333;
+}
+.alInputsWrapper textarea:hover{
+  border: 1px solid #333;
 }
 .alProductPreview{
   margin-left: 50%;
