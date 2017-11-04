@@ -25,7 +25,7 @@ class Bitmoji extends Component {
               <br/><br/>&#160;&#160;&#160;&#160;Or, log in as an admin and try out managing products through the custom CMS. <br/><br/>
               username: admin <br/>password: admin
               <br/><br/>&#160;&#160;&#160;&#160;4 minute video walkthrough for this project:<br/>
-              <a target='_blank' href="https://youtu.be/nwBvaACZ6Dc">Video</a>
+              <a target='_blank' href="https://youtu.be/I3Dfwz1Xzt8">Video</a>
           </p>
         </div>
       </div>
