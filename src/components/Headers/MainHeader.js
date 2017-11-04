@@ -4,7 +4,7 @@ import LoginLanding from './../Login/LoginLanding.js';
 
 import './MainHeader.css';
 
-let mainHeaderState = {
+window.mainHeaderState = {
     isAdmin: false,
     showLogin: false,
     userName: ''
@@ -14,14 +14,14 @@ class MainHeader extends Component {
     constructor(props) {
         super(props)
 
-        this.state = mainHeaderState
+        this.state = window.mainHeaderState
         //bind shit here
         this.updateShowLogin = this.updateShowLogin.bind(this);
         this.updateIsAdmin = this.updateIsAdmin.bind(this);
     }
 
     componentWillUnmount(){
-        mainHeaderState = this.state;
+        window.mainHeaderState = this.state;
     }
 
     updateShowLogin(){
@@ -39,7 +39,7 @@ class MainHeader extends Component {
     }
 
     render() {
-
+        console.log(window.mainHeaderState)
         let headerName = {
             "transform": "scale(1, .6)",
             "font-weight": "bolder",
