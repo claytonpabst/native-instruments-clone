@@ -59,6 +59,7 @@ class AdminLanding extends Component {
   }
 
   submit() {
+    console.log('updateProduct should have been hit.')
     if(this.state.editClicked){
       axios.patch('/api/updateProduct', { "productID": this.state.productID,
                                           "title": this.state.titleInput, 
