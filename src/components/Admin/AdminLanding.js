@@ -59,7 +59,6 @@ class AdminLanding extends Component {
   }
 
   submit() {
-    console.log('updateProduct should have been hit.')
     if(this.state.editClicked){
       axios.patch('/api/updateProduct', { "productID": this.state.productID,
                                           "title": this.state.titleInput, 
@@ -68,7 +67,6 @@ class AdminLanding extends Component {
                                           "image": this.state.imageInput, 
                                           "attributes": this.state.attributesInput})
           .then(res => {
-            console.log(res);
             alert(res.data);
             this.cancelEdit();
             this.child.componentDidMount()
@@ -80,7 +78,6 @@ class AdminLanding extends Component {
                                       "image": this.state.imageInput, 
                                       "attributes": this.state.attributesInput})
           .then(res => {
-            console.log(res);
             alert(res.data);
             this.cancelEdit();
             this.child.componentDidMount()
@@ -89,7 +86,6 @@ class AdminLanding extends Component {
   }
 
   editProduct(id,image,title,description,price,attributes){
-    console.log(id)
     this.setState({
       productID:id,
       imageInput:image,

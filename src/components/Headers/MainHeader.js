@@ -39,7 +39,6 @@ class MainHeader extends Component {
     }
 
     render() {
-        console.log(window.mainHeaderState)
         let headerName = {
             "transform": "scale(1, .6)",
             "font-weight": "bolder",

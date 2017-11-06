@@ -21,7 +21,6 @@ class LoginLanding extends Component {
   }
 
   login(){
-    console.log('hit')
     axios.post(`/api/login`, {"username":this.state.usernameInput, "userpassword":this.state.passwordInput})
     .then( res => {
       if(res.data[0].isadmin === true){

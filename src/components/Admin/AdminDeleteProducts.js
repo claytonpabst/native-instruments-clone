@@ -27,7 +27,6 @@ class AdminDeleteProducts extends Component {
   }
 
   deleteProduct(id, title){
-    console.log(id, title)
     axios.delete(`/api/deleteProduct`, {params: {"productID":id, "productTitle":title}})
       .then(res => {
         alert(res.data)

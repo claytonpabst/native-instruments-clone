@@ -18,7 +18,6 @@ class ProductsLandingProducts extends Component {
     componentDidMount() {
         axios.get(`/api/getProducts`)
             .then(res => {
-                console.log(res)
                 this.setState({
                     products: res.data
                 })
