@@ -15,7 +15,8 @@ class Home extends Component {
     super(props)
 
     this.state = {
-      showBitmoji: true
+      showBitmoji: true,
+      showCover: true
     }
     //bind shit here
     this.showBitmoji = this.showBitmoji.bind(this);
@@ -34,6 +35,9 @@ class Home extends Component {
     return (
       <div className="home">
           
+          <div className='fixedCover'>
+            <input type="text"/>
+          </div>
           {bitmoji}
           <MainHeader/>
           <LandingVideo/>
