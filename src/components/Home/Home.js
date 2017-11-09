@@ -9,7 +9,6 @@ import Bitmoji from './Bitmoji.js';
 
 import './Home.css';
 
-
 class Home extends Component {
   constructor(props){
     super(props)
@@ -20,6 +19,7 @@ class Home extends Component {
     }
     //bind shit here
     this.showBitmoji = this.showBitmoji.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   showBitmoji(){
@@ -28,23 +28,32 @@ class Home extends Component {
     })
   }
 
+  handleChange(e){
+    if(e.target.value === 'changeme'){
+      this.setState({
+        showCover:false
+      })
+    }
+  }
+
   render() {
 
     let bitmoji = this.state.showBitmoji ? <Bitmoji showBitmoji={this.showBitmoji}/> : null
+    let cover = this.state.showCover ?  <div className='fixedCover'>
+                                          <input onChange={this.handleChange} type="text"/>
+                                        </div> : null
 
     return (
       <div className="home">
           
-          <div className='fixedCover'>
-            <input type="text"/>
-          </div>
+          {cover}
           {bitmoji}
           <MainHeader/>
           <LandingVideo/>
           <LandingTeaserStories/>
           <LandingFeaturedProducts/>
           <LandingMoreStories/>
-          <MainFooter/>
+          <MainFooter/>}
 
       </div>
     );
